@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宁夏汇广特种设备检测有限公司 - 企业数字名片</title>
+    <!-- 引入Google字体和图标库 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0059FF;
+            --primary-red: #FF2B4E;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* 容器限制 */
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        /* 头部设计 */
+        header {
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(to bottom, rgba(0,89,255,0.05), transparent);
+        }
+
+        .logo-placeholder {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 联系方式 */
+        .contact-section {
+            padding: 0 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,89,255,0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .contact-item i {
+            width: 35px;
+            height: 35px;
+            background: rgba(0,89,255,0.1);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+
+        /* 企业介绍 */
+        .intro-section {
+            padding: 30px 25px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 18px;
+            background: var(--primary-red);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .intro-content {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        /* 产品列表 */
+        .product-section {
+            padding: 0 25px 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .product-price {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* 价目表样式 */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .price-table th {
+            background: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+        }
+
+        .price-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .price-table tr:hover {
+            background: rgba(0,89,255,0.05);
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 12px;
+            color: var(--text-gray);
+            background: #f9f9f9;
+        }
+
+        /* 微信弹窗模拟 (手机端长按) */
+        .wechat-id {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .container { border-radius: 15px; }
+            .price-table { font-size: 12px; }
+            .price-table th,
+            .price-table td { padding: 8px 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 头部 -->
+    <header>
+        <!-- 这里可以替换成你的Logo图片地址 -->
+        <img src="汇广logo.jpg" alt="Logo" class="logo-placeholder">
+        <div class="company-name">宁夏汇广特种设备检测有限公司</div>
+    </header>
+
+    <!-- 联系方式 -->
+    <section class="contact-section">
+        <a href="https://map.baidu.com" class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>固原市清水河工业园区</span>
+        </a>
+        <a href="tel:13014287980" class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>13014287980（刘文）</span>
+        </a>
+        <!-- <div class="contact-item">
+            <i class="fab fa-weixin"></i>
+            <span>微信：<span class="wechat-id">MFON_FUTURE</span></span>
+        </div>-->
+        <a href="mailto:614875674@qq.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>614875674@qq.com</span>
+        </a>
+         
+    </section>
+
+    <!-- 企业介绍 -->
+    <section class="intro-section">
+        <div class="section-title">企业介绍</div>
+        <div class="intro-content">
+            　　宁夏汇广特种设备检测有限公司成立于 2025 年 2 月，坐落于固原市清水河工业园区，属专业技术服务企业。公司专注 LNG、CNG 气罐检测服务，恪守规范、专业严谨，为客户提供安全可靠的气瓶检验检测，保障特种设备安全运行。
+        </div>
+    </section>
+
+    <!-- 价目表 -->
+    <section class="product-section">
+        <div class="section-title">价目表</div>
+        
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>服务项目</th>
+                    <th>规格</th>
+                    <th>检验费</th>
+                    <th>气瓶拆卸装卸费</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4">1</td>
+                    <td rowspan="4">CNG</td>
+                    <td>出租车</td>
+                    <td>170</td>
+                    <td>130</td>
+                </tr>
+                <tr>
+                    <td>轿车</td>
+                    <td>170</td>
+                    <td>130</td>
+                </tr>
+                <tr>
+                    <td>整车出厂</td>
+                    <td>170</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>皮卡</td>
+                    <td>170</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>LNG</td>
+                    <td>检验费</td>
+                    <td>1000</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>办理电子标签</td>
+                    <td>—</td>
+                    <td>20（CNG）</td>
+                    <td>50（LNG）</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        版权所有 © 成都木风未来科技有限公司
+    </footer>
+</div>
+
+</body>
+</html>
